@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "slug": "how-this-blog-works",
+      "date": "Placeholder date",
+      "title": "How this blog works",
+      "summary": "A quick note on how to add, edit, and remove posts from the Blog Posts section of the dashboard — delete this post once you're comfortable.",
+      "body": "Open **/admin**, go to *Blog Posts*, and click *All Posts*.\n\nEach post is one item in a list: a title, a date, a short summary (shown on the blog listing page), and a body (shown on the full post page — this box supports headings, bold text, links, and paragraphs).\n\nThe most recent post should sit at the top of the list. Add a new one with the **Add** button, or delete this example once you've got the hang of it.\n\n## A note on slugs\n\nThe *slug* field controls the post's web address, e.g. a slug of `pricing-a-brand-deal` becomes `yoursite.com/post.html?slug=pricing-a-brand-deal`. Keep it short, lowercase, and use hyphens instead of spaces."
+    }
+  ]
+}

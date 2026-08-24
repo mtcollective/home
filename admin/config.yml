@@ -1,0 +1,100 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Homepage"
+    files:
+      - name: "site"
+        label: "Homepage Content"
+        file: "content/site.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow line", name: "eyebrow", widget: "string" }
+              - { label: "Headline (before the accent phrase)", name: "headline", widget: "string" }
+              - { label: "Headline accent phrase (shown in oxblood/italic)", name: "headlineAccent", widget: "string" }
+              - { label: "Subheading", name: "lede", widget: "text" }
+
+          - label: "Track Record Stats"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.num}} — {{fields.label}}"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Founders"
+            name: "founders"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+          - label: "Closing Note (below the founder bios)"
+            name: "closingNote"
+            widget: "text"
+
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Fee / turnaround note (shown in small caps)", name: "fee", widget: "string" }
+
+          - label: "Process Steps"
+            name: "process"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Instagram"
+            name: "instagram"
+            widget: "object"
+            fields:
+              - { label: "Handle (shown next to 'Follow along')", name: "handle", widget: "string" }
+              - { label: "Profile URL", name: "profileUrl", widget: "string" }
+              - label: "Grid images (6 tiles)"
+                name: "images"
+                widget: "list"
+                fields:
+                  - { label: "Image", name: "url", widget: "image" }
+                  - { label: "Link (usually the same profile URL, or the direct post link)", name: "link", widget: "string" }
+
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+  - name: "posts"
+    label: "Blog Posts"
+    files:
+      - name: "posts"
+        label: "All Posts"
+        file: "content/posts.json"
+        fields:
+          - label: "Posts (most recent at the top)"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date (shown as plain text, e.g. '12 Aug 2026')", name: "date", widget: "string" }
+              - { label: "Slug (used in the web address — lowercase, hyphens, no spaces)", name: "slug", widget: "string" }
+              - { label: "Summary (shown on the blog listing page)", name: "summary", widget: "text" }
+              - { label: "Body (shown on the full post page)", name: "body", widget: "markdown" }

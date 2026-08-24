@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "eyebrow": "Content Strategy · Influencer Strategy · Contract Review",
+    "headline": "Commercial judgement for brands who've",
+    "headlineAccent": "outgrown guesswork.",
+    "lede": "Nine years negotiating high-value commercial contracts, plus hands-on experience building a 2 million-follower brand — for founders who need sharper content and safer deals, without a full-time hire."
+  },
+  "stats": [
+    { "num": "2M+", "label": "followers grown across platforms" },
+    { "num": "£19M+", "label": "in lease contract value negotiated last year" },
+    { "num": "9 yrs", "label": "negotiating high-value commercial contracts" },
+    { "num": "RICS", "label": "chartered surveyor, commercial practice" }
+  ],
+  "founders": [
+    {
+      "name": "Molly Maguire",
+      "role": "Commercial & Contract Strategy",
+      "bio": "RICS-chartered surveyor with nine years' experience structuring and negotiating high-value commercial contracts — most recently as Senior Flex Leasing Manager at a FTSE 250 REIT, negotiating over £19m in lease value last year alone. Molly leads on deal structure, contract review, and commercial risk.",
+      "photo": "/images/uploads/molly-photo.jpg"
+    },
+    {
+      "name": "Duncan Maguire",
+      "role": "Content & Audience Strategy",
+      "bio": "The face of TJ and Duncan, a pet content brand built from the ground up to a combined 2 million followers across platforms. Duncan leads on content strategy, production, and what actually gets an audience to watch, trust, and buy.",
+      "photo": "/images/uploads/duncan-photo.jpg"
+    }
+  ],
+  "closingNote": "Most content advisors have never negotiated a contract with real financial weight behind it. Most commercial negotiators have never built an audience or made content themselves. Between us, we've done both — which is what we bring to your content and partnership strategy.",
+  "services": [
+    {
+      "title": "Content & Partnerships Audit",
+      "description": "A written audit of your current approach and a 90-day plan — plus brand-deal readiness: what to charge, and what to watch for.",
+      "fee": "DELIVERED IN 7–10 DAYS · ONE FOLLOW-UP SESSION INCLUDED"
+    },
+    {
+      "title": "Influencer & Partnership Strategy",
+      "description": "Relying on one or two paid faces is a risk, not a strategy. I design a wider, tiered approach — ambassadors, micro and nano creators, UGC — so your reach doesn't depend on any one partnership.",
+      "fee": "STRATEGY DOCUMENT + WALKTHROUGH CALL"
+    },
+    {
+      "title": "Content Briefs & Video Concepts",
+      "description": "Specific, shootable ideas — written briefs ready to hand to a videographer, editor, or in-house team, so strategy turns into content without another hire.",
+      "fee": "DELIVERED PER BATCH · TURNAROUND AGREED UPFRONT"
+    },
+    {
+      "title": "Founder-Led Content Strategy",
+      "description": "Your own expertise is content most brands underuse. I build a strategy around what you already know, so it costs less than paid partnerships and is harder for anyone else to copy.",
+      "fee": "INCLUDED IN AUDIT · AVAILABLE AS STANDALONE"
+    },
+    {
+      "title": "Contract Review",
+      "description": "Considering a brand partnership? I'll review the agreement — usage rights, exclusivity, fees — and flag anything that puts you at a disadvantage before you sign.",
+      "fee": "TURNAROUND WITHIN 48 HOURS"
+    }
+  ],
+  "process": [
+    { "title": "Discovery call", "description": "30–45 minutes on where you're at and what's not working." },
+    { "title": "Audit & research", "description": "Your current presence, reviewed against what's working in your space." },
+    { "title": "Written plan", "description": "A clear document with a 90-day plan you can act on immediately." },
+    { "title": "Walkthrough call", "description": "We go through it together and agree what happens next." }
+  ],
+  "instagram": {
+    "handle": "@handle",
+    "profileUrl": "https://instagram.com/",
+    "images": [
+      { "url": "/images/uploads/insta-1.jpg", "link": "https://instagram.com/" },
+      { "url": "/images/uploads/insta-2.jpg", "link": "https://instagram.com/" },
+      { "url": "/images/uploads/insta-3.jpg", "link": "https://instagram.com/" },
+      { "url": "/images/uploads/insta-4.jpg", "link": "https://instagram.com/" },
+      { "url": "/images/uploads/insta-5.jpg", "link": "https://instagram.com/" },
+      { "url": "/images/uploads/insta-6.jpg", "link": "https://instagram.com/" }
+    ]
+  },
+  "contact": {
+    "heading": "Let's see if it's a fit.",
+    "text": "A short call is the best way to know if it's useful for where you're at. No obligation — send a few details and I'll reply directly."
+  }
+}

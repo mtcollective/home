@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Post — M&amp;T Collective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC; --ink:#1C2321; --ink-soft:#3F4642;
+    --brass:#6B1420; --sage:#8C3A3A; --rule:#D9D2C2; --rule-strong:#B9AF98;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter', sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Fraunces', serif; font-weight:500; margin:0; letter-spacing:-0.01em;}
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
+  a{color:inherit;}
+  .wrap{max-width:680px; margin:0 auto; padding:0 28px;}
+  .rule{border:none; border-top:1px solid var(--rule); margin:0;}
+
+  header.top{padding:20px 0; border-bottom:1px solid var(--rule);}
+  header.top .wrap{max-width:760px; display:flex; justify-content:space-between; align-items:baseline;}
+  .doc-id{font-size:12px; color:var(--ink-soft); text-transform:uppercase;}
+  nav.top-nav{display:flex; gap:22px;}
+  nav.top-nav a{font-size:13px; text-decoration:none; color:var(--ink-soft); transition:color 0.2s ease;}
+  nav.top-nav a:hover, nav.top-nav a:focus-visible{color:var(--brass);}
+  @media (max-width:560px){
+    header.top .wrap{flex-direction:column; align-items:flex-start; gap:12px;}
+    nav.top-nav{gap:16px; flex-wrap:wrap;}
+  }
+
+  .post-head{padding:56px 0 28px;}
+  .back-link{display:inline-block; font-size:13px; color:var(--ink-soft); text-decoration:none; margin-bottom:22px;}
+  .back-link:hover{color:var(--brass);}
+  .post-date{font-size:13px; color:var(--brass); margin-bottom:14px;}
+  .post-head h1{font-size:clamp(28px, 5vw, 40px); line-height:1.15;}
+
+  .post-body{padding:12px 0 72px; font-size:17px; color:var(--ink-soft);}
+  .post-body p{margin:0 0 20px;}
+  .post-body h2{font-size:22px; color:var(--ink); margin:36px 0 14px;}
+  .post-body a{color:var(--brass); text-decoration:underline;}
+  .post-body strong{color:var(--ink);}
+
+  footer{border-top:1px solid var(--rule); padding:24px 0 40px;}
+  footer .wrap{max-width:760px; display:flex; justify-content:space-between; font-size:13px; color:var(--ink-soft); flex-wrap:wrap; gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="mono doc-id">M&amp;T COLLECTIVE</div>
+    <nav class="top-nav">
+      <a href="index.html#work">Services</a>
+      <a href="index.html#follow">Instagram</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="post-head">
+  <div class="wrap">
+    <a class="back-link" href="blog.html">← All posts</a>
+    <div class="post-date mono" id="post-date"></div>
+    <h1 id="post-title">Loading…</h1>
+  </div>
+</section>
+
+<section class="post-body">
+  <div class="wrap" id="post-body"></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>M&amp;T Collective · Founded by Molly Maguire</span>
+    <span><a href="mailto:mollymag1@hotmail.co.uk" style="color:inherit;">mollymag1@hotmail.co.uk</a> · <a href="https://uk.linkedin.com/in/molly-maguire" style="color:inherit;" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+
+<!-- Tiny markdown renderer for the post body written in the CMS -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+
+  fetch('content/posts.json').then(r => r.json()).then(data => {
+    const posts = Array.isArray(data.posts) ? data.posts : [];
+    const post = posts.find(p => p.slug === slug);
+
+    if (!post) {
+      document.getElementById('post-title').textContent = 'Post not found';
+      document.getElementById('post-body').innerHTML = '<p>That post doesn\'t exist — it may have been renamed or removed. <a href="blog.html">Back to all posts</a>.</p>';
+      return;
+    }
+
+    document.title = `${post.title} — M&T Collective`;
+    document.getElementById('post-date').textContent = post.date || '';
+    document.getElementById('post-title').textContent = post.title || '';
+    document.getElementById('post-body').innerHTML = window.marked ? marked.parse(post.body || '') : (post.body || '');
+  }).catch(() => {
+    document.getElementById('post-title').textContent = 'Couldn\'t load this post';
+  });
+</script>
+
+</body>
+</html>

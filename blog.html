@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes — M&amp;T Collective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC; --ink:#1C2321; --ink-soft:#3F4642;
+    --brass:#6B1420; --sage:#8C3A3A; --rule:#D9D2C2; --rule-strong:#B9AF98;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter', sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Fraunces', serif; font-weight:500; margin:0; letter-spacing:-0.01em;}
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
+  a{color:inherit;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+  .rule{border:none; border-top:1px solid var(--rule); margin:0;}
+
+  header.top{padding:20px 0; border-bottom:1px solid var(--rule);}
+  header.top .wrap{display:flex; justify-content:space-between; align-items:baseline;}
+  .doc-id{font-size:12px; color:var(--ink-soft); text-transform:uppercase;}
+  nav.top-nav{display:flex; gap:22px;}
+  nav.top-nav a{font-size:13px; text-decoration:none; color:var(--ink-soft); transition:color 0.2s ease;}
+  nav.top-nav a:hover, nav.top-nav a:focus-visible{color:var(--brass);}
+  @media (max-width:560px){
+    header.top .wrap{flex-direction:column; align-items:flex-start; gap:12px;}
+    nav.top-nav{gap:16px; flex-wrap:wrap;}
+  }
+
+  .page-head{padding:64px 0 40px;}
+  .section-label{font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--brass); margin-bottom:14px;}
+  .page-head h1{font-size:clamp(32px, 5vw, 44px); max-width:16ch;}
+  .page-head p{margin-top:16px; color:var(--ink-soft); max-width:50ch; font-size:17px;}
+
+  .post-list{padding:20px 0 72px;}
+  .post-row{display:block; padding:28px 0; border-top:1px solid var(--rule); text-decoration:none;}
+  .post-row:last-child{border-bottom:1px solid var(--rule);}
+  .post-date{font-size:12px; color:var(--brass);}
+  .post-row h2{font-size:22px; margin:8px 0 8px; color:var(--ink);}
+  .post-row p{font-size:15px; color:var(--ink-soft); max-width:56ch; margin:0;}
+  .post-row .read-more{display:inline-block; margin-top:10px; font-size:13px; border-bottom:1px solid var(--rule-strong);}
+  .empty-state{color:var(--ink-soft); font-size:15px; padding:20px 0;}
+
+  footer{border-top:1px solid var(--rule); padding:24px 0 40px;}
+  footer .wrap{display:flex; justify-content:space-between; font-size:13px; color:var(--ink-soft); flex-wrap:wrap; gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="mono doc-id">M&amp;T COLLECTIVE</div>
+    <nav class="top-nav">
+      <a href="index.html#work">Services</a>
+      <a href="index.html#follow">Instagram</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="section-label">Field Notes</div>
+    <h1>Writing on brand deals, content, and commercial strategy.</h1>
+    <p>Notes from the advisory side — negotiation, creator-economy insight, and what actually moves a partnership forward.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="post-list">
+  <div class="wrap" id="post-list">
+    <div class="empty-state">Loading posts…</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>M&amp;T Collective · Founded by Molly Maguire</span>
+    <span><a href="mailto:mollymag1@hotmail.co.uk" style="color:inherit;">mollymag1@hotmail.co.uk</a> · <a href="https://uk.linkedin.com/in/molly-maguire" style="color:inherit;" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script>
+  fetch('content/posts.json').then(r => r.json()).then(data => {
+    const wrap = document.getElementById('post-list');
+    const posts = Array.isArray(data.posts) ? data.posts : [];
+    if (posts.length === 0) {
+      wrap.innerHTML = '<div class="empty-state">No posts yet — add one from the dashboard at /admin.</div>';
+      return;
+    }
+    wrap.innerHTML = '';
+    posts.forEach(post => {
+      const row = document.createElement('a');
+      row.className = 'post-row';
+      row.href = `post.html?slug=${encodeURIComponent(post.slug || '')}`;
+      row.innerHTML = `
+        <div class="post-date mono">${post.date || ''}</div>
+        <h2>${post.title || ''}</h2>
+        <p>${post.summary || ''}</p>
+        <span class="read-more">Read more</span>
+      `;
+      wrap.appendChild(row);
+    });
+  }).catch(() => {
+    document.getElementById('post-list').innerHTML = '<div class="empty-state">Couldn\'t load posts right now.</div>';
+  });
+</script>
+
+</body>
+</html>
