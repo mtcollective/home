@@ -6,10 +6,22 @@
     "lede": "Nine years negotiating high-value commercial contracts, plus hands-on experience building a 2 million-follower brand — for founders who need sharper content and safer deals, without a full-time hire."
   },
   "stats": [
-    { "num": "2M+", "label": "followers grown across platforms" },
-    { "num": "£19M+", "label": "in lease contract value negotiated last year" },
-    { "num": "9 yrs", "label": "negotiating high-value commercial contracts" },
-    { "num": "RICS", "label": "chartered surveyor, commercial practice" }
+    {
+      "num": "2M+",
+      "label": "followers grown across platforms"
+    },
+    {
+      "num": "£19M+",
+      "label": "in lease contract value negotiated last year"
+    },
+    {
+      "num": "9 yrs",
+      "label": "negotiating high-value commercial contracts"
+    },
+    {
+      "num": "RICS",
+      "label": "chartered surveyor, commercial practice"
+    }
   ],
   "founders": [
     {
@@ -19,7 +31,7 @@
       "photo": "/images/uploads/molly-photo.jpg"
     },
     {
-      "name": "Duncan Maguire",
+      "name": "Duncan Tout",
       "role": "Content & Audience Strategy",
       "bio": "The face of TJ and Duncan, a pet content brand built from the ground up to a combined 2 million followers across platforms. Duncan leads on content strategy, production, and what actually gets an audience to watch, trust, and buy.",
       "photo": "/images/uploads/duncan-photo.jpg"
@@ -54,21 +66,51 @@
     }
   ],
   "process": [
-    { "title": "Discovery call", "description": "30–45 minutes on where you're at and what's not working." },
-    { "title": "Audit & research", "description": "Your current presence, reviewed against what's working in your space." },
-    { "title": "Written plan", "description": "A clear document with a 90-day plan you can act on immediately." },
-    { "title": "Walkthrough call", "description": "We go through it together and agree what happens next." }
+    {
+      "title": "Discovery call",
+      "description": "30–45 minutes on where you're at and what's not working."
+    },
+    {
+      "title": "Audit & research",
+      "description": "Your current presence, reviewed against what's working in your space."
+    },
+    {
+      "title": "Written plan",
+      "description": "A clear document with a 90-day plan you can act on immediately."
+    },
+    {
+      "title": "Walkthrough call",
+      "description": "We go through it together and agree what happens next."
+    }
   ],
   "instagram": {
     "handle": "@handle",
     "profileUrl": "https://instagram.com/",
     "images": [
-      { "url": "/images/uploads/insta-1.jpg", "link": "https://instagram.com/" },
-      { "url": "/images/uploads/insta-2.jpg", "link": "https://instagram.com/" },
-      { "url": "/images/uploads/insta-3.jpg", "link": "https://instagram.com/" },
-      { "url": "/images/uploads/insta-4.jpg", "link": "https://instagram.com/" },
-      { "url": "/images/uploads/insta-5.jpg", "link": "https://instagram.com/" },
-      { "url": "/images/uploads/insta-6.jpg", "link": "https://instagram.com/" }
+      {
+        "url": "/images/uploads/insta-1.jpg",
+        "link": "https://instagram.com/"
+      },
+      {
+        "url": "/images/uploads/insta-2.jpg",
+        "link": "https://instagram.com/"
+      },
+      {
+        "url": "/images/uploads/insta-3.jpg",
+        "link": "https://instagram.com/"
+      },
+      {
+        "url": "/images/uploads/insta-4.jpg",
+        "link": "https://instagram.com/"
+      },
+      {
+        "url": "/images/uploads/insta-5.jpg",
+        "link": "https://instagram.com/"
+      },
+      {
+        "url": "/images/uploads/insta-6.jpg",
+        "link": "https://instagram.com/"
+      }
     ]
   },
   "contact": {
